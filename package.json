@@ -1,12 +1,23 @@
 {
-  "name": "nodecli---ws---17-de-enero",
+  "name": "workshop",
   "version": "1.0.0",
-  "description": "",
+  "description": "trabajando en el WS numero 5",
   "main": "bash.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pedrofanelli/05-NodeCLI.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pedrofanelli/05-NodeCLI/issues"
+  },
+  "homepage": "https://github.com/pedrofanelli/05-NodeCLI#readme",
+  "dependencies": {
+    "request": "^2.88.2"
+  }
 }
