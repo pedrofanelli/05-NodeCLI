@@ -1,0 +1,3 @@
+Intentá que cat acepte un String de nombres de archivos, separados por espacios.
+El prompt > deberá imprimirse luego de que se muestren todos los archivos. 
+Intentá mantener el orden original de los nombres de archivos.

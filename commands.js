@@ -20,5 +20,31 @@ module.exports = {
             })
             process.stdout.write("prompt > ");
         });
+    },
+    echo: function (array) {
+        array.shift();
+        let str = array.join(" ");
+        process.stdout.write(str);
+        process.stdout.write('\nprompt > ');
+    },
+    cat: function (array) {
+        array.shift();
+        /* let fileName = array.join(" "); */
+
+        const leerFile = (path, callback) => {
+            fs.readFile(path, (err, data) => {
+                if (!data) {
+                    console.error("No data. The path is wrong.");
+                    process.stdout.write("prompt > ");
+                } else {
+                    callback(data.toString());
+                    process.stdout.write("prompt > ");
+                } 
+            });
+        };
+        
+        array.forEach((file) => {
+            leerFile(file, console.log);
+        });
     }
 }

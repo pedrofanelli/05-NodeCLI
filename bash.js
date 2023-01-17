@@ -6,17 +6,17 @@ process.stdout.write('prompt > ');
 
 // El evento STDIN 'data' se dispara cuando el usuario escribe una línea
 process.stdin.on('data', function (data) {
-    if (data.toString().trim() === "pwd") {
+    let arr = data.toString().trim().split(" ");
+    /* if (arr[0] === "pwd") {
         commands.pwd();
-    } else if (data.toString().trim() === "date") {
+    } else if (arr[0] === "date") {
         commands.date();
-    } else if (data.toString().trim() === "ls") {
+    } else if (arr[0] === "ls") {
         commands.ls();
-    } else {
-        let cmd = data.toString().trim(); // Remueve la nueva línea
-        process.stdout.write('You typed: ' + cmd);
-        process.stdout.write('\nprompt > ');
-    }
+    } else if (arr[0] === "echo") {
+        commands.echo(arr);
+    } */
+    commands[arr[0]](arr);
 });
 
 
