@@ -3,3 +3,18 @@ Hasta ahora, echo era el único método que utilizaba como parámetro un String 
 Para las Funciones cat, head y tail, el parámetro que utilizaremos hará referencia al nombre del archivo (file o filename).
 
 Veamos algunas definiciones antes de avanzar con el siguiente ejercicio.
+Hasta ahora, echo era el único método que utilizaba como parámetro un String que representaba un texto a imprimirse.
+
+Para las Funciones cat, head y tail, el parámetro que utilizaremos hará referencia al nombre del archivo (file o filename).
+
+Veamos algunas definiciones antes de avanzar con el siguiente ejercicio.
+Hasta ahora, echo era el único método que utilizaba como parámetro un String que representaba un texto a imprimirse.
+
+Para las Funciones cat, head y tail, el parámetro que utilizaremos hará referencia al nombre del archivo (file o filename).
+
+Veamos algunas definiciones antes de avanzar con el siguiente ejercicio.
+Hasta ahora, echo era el único método que utilizaba como parámetro un String que representaba un texto a imprimirse.
+
+Para las Funciones cat, head y tail, el parámetro que utilizaremos hará referencia al nombre del archivo (file o filename).
+
+Veamos algunas definiciones antes de avanzar con el siguiente ejercicio.

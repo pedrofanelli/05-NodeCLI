@@ -54,5 +54,49 @@ module.exports = {
             console.log('body:', body); // Print the HTML for the Google homepage.
             done();
         });
+    }, 
+    head: function (array, done) {
+        array.shift();
+
+        const leerFile = (path, callback) => {
+            fs.readFile(path, (err, data) => {
+                if (!data) {
+                    console.error("No data. The path is wrong.");
+                    done();
+                } else {
+                    callback(data.toString());
+                } 
+            });
+        };
+        
+        array.forEach((file) => {
+            leerFile(file, function (data) {
+                let lines = data.split("\n");
+                let conjunto = lines.slice(0, 10).join("\n");
+                done(conjunto);
+            });
+        });
+    },
+    tail: function (array, done) {
+        array.shift();
+
+        const leerFile = (path, callback) => {
+            fs.readFile(path, (err, data) => {
+                if (!data) {
+                    console.error("No data. The path is wrong.");
+                    done();
+                } else {
+                    callback(data.toString());
+                } 
+            });
+        };
+        
+        array.forEach((file) => {
+            leerFile(file, function (data) {
+                let lines = data.split("\n");
+                let conjunto = lines.slice(lines.length - 10, lines.length).join("\n");
+                done(conjunto);
+            });
+        });
     }
 }
