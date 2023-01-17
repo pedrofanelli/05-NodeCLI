@@ -1,50 +1,58 @@
 const fs = require('fs');
+const request = require('request');
 
 module.exports = {
-    pwd: function() {
+    pwd: function(array, done) {
         // Código pwd
         let ruta = process.argv[1];
-        process.stdout.write(ruta);
-        process.stdout.write('\nprompt > ');
+        done(ruta);
     }, 
-    date: function() {
+    date: function(array, done) {
         let fecha = new Date();
-        process.stdout.write(fecha.toString());
-        process.stdout.write('\nprompt > ');
+        done(fecha.toString());
     },
-    ls: function () {
+    ls: function (array, done) {
         fs.readdir('.', function(err, files) {
             if (err) throw err;
+            let output = "";
             files.forEach(function(file) {
-                process.stdout.write(file.toString() + "\n");
+                output += file.toString() + "\n";
             })
-            process.stdout.write("prompt > ");
+            done(output);
         });
     },
-    echo: function (array) {
+    echo: function (array, done) {
         array.shift();
         let str = array.join(" ");
-        process.stdout.write(str);
-        process.stdout.write('\nprompt > ');
+        done(str);
     },
-    cat: function (array) {
+    cat: function (array, done) {
         array.shift();
-        /* let fileName = array.join(" "); */
 
         const leerFile = (path, callback) => {
             fs.readFile(path, (err, data) => {
                 if (!data) {
                     console.error("No data. The path is wrong.");
-                    process.stdout.write("prompt > ");
                 } else {
                     callback(data.toString());
-                    process.stdout.write("prompt > ");
                 } 
+                done();
             });
         };
         
         array.forEach((file) => {
             leerFile(file, console.log);
+        });
+        
+    },
+    curl: function (array, done) {
+        array.shift();
+        let url = array.join(" ");
+        request(url, function (error, response, body) {
+            console.error('error:', error); // Print the error if one occurred
+            console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+            console.log('body:', body); // Print the HTML for the Google homepage.
+            done();
         });
     }
 }
